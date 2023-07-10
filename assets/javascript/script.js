@@ -47,6 +47,20 @@ playAgainButton.addEventListener("click", function () {
   showQuizScreen();
 });
 
+var restartButton = document.createElement("button");
+restartButton.textContent = "Restart Quiz";
+restartButton.className = "button button-primary";
+restartButton.addEventListener("click", function () {
+  startQuiz();
+});
+
+var clearHighScoresButton = document.createElement("button");
+clearHighScoresButton.textContent = "Clear High Scores";
+clearHighScoresButton.className = "button button-secondary";
+clearHighScoresButton.addEventListener("click", function () {
+  clearHighScores();
+});
+
 function startQuiz() {
   startButton.style.display = "none"; // Hide the "Start Quiz" button
   quizContainer.style.display = "block";
@@ -118,8 +132,8 @@ function endQuiz() {
   resultContainer.style.display = "none";
   scoreContainer.style.display = "block";
   showInitialsForm();
-  playAgainButton.style.display = "none";
-  initialsFormContainer.style.display = "none";
+  playAgainButton.style.display = "block";
+  highScoresContainer.style.display = "block";
   showHighScoresScreen();
 }
 
@@ -142,6 +156,9 @@ initialsForm.addEventListener("submit", function (event) {
 });
 
 function showHighScoresScreen() {
+  scoreContainer.style.display = "none";
+  highScoresContainer.style.display = "block";
+
   var highScores = getHighScores();
   highScoresTableBody.innerHTML = ""; // Clear the high scores table body
 
@@ -160,27 +177,32 @@ function showHighScoresScreen() {
     highScoresTableBody.innerHTML = "<tr><td colspan='2'>No high scores found.</td></tr>";
   }
 
-  scoreContainer.style.display = "none";
-  initialsFormContainer.style.display = "none";
-  highScoresContainer.style.display = "block";
-
-  // Check if the quiz is completed
-  if (currentQuestionIndex === questions.length) {
-    var restartButton = document.createElement("button");
+  var restartButton = document.querySelector("#high-scores-container button.button-primary");
+  if (!restartButton) {
+    restartButton = document.createElement("button");
     restartButton.textContent = "Restart Quiz";
     restartButton.className = "button button-primary";
     restartButton.addEventListener("click", function () {
-      showQuizScreen();
+      startQuiz();
     });
     highScoresContainer.appendChild(restartButton);
   }
+
+  // Show restart and clear high scores buttons only if the quiz is completed
+  if (currentQuestionIndex === questions.length) {
+    highScoresContainer.appendChild(clearHighScoresButton);
+  }
+}
+
+function clearHighScores() {
+  localStorage.removeItem("highScores");
+  highScoresTableBody.innerHTML = "<tr><td colspan='2'>No high scores found.</td></tr>";
 }
 
 function showQuizScreen() {
   scoreContainer.style.display = "none";
   initialsFormContainer.style.display = "none";
   highScoresContainer.style.display = "none";
-  playAgainButton.style.display = "none";
   startQuiz();
 }
 
