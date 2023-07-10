@@ -15,5 +15,21 @@
       choices: ["Cascading Style Sheets", "Creative Style Sheets", "Colorful Style Sheets", "Computer Style Sheets"],
       correctAnswer: "Cascading Style Sheets"
     },
-    // Add more questions here
+    //Can add more questions here
   ];
+
+  var currentQuestionIndex = 0;
+  var score = 0;
+  var timeLeft = 60; // Total time for the quiz in seconds
+  var timerInterval;
+
+  var quizContainer = document.getElementById("quiz-container");
+  var questionContainer = document.getElementById("question-container");
+  var questionElement = document.getElementById("question");
+  var choicesElement = document.getElementById("choices");
+  var resultContainer = document.getElementById("result-container");
+  var resultElement = document.getElementById("result");
+  var scoreContainer = document.getElementById("score-container");
+  var scoreElement = document.getElementById("score");
+  var initialsForm = document.getElementById("initials-form");
+  var initialsInput = document.getElementById("initials");
