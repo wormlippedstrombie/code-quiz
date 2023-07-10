@@ -24,7 +24,6 @@
   var timerInterval;
 
   var quizContainer = document.getElementById("quiz-container");
-  var questionContainer = document.getElementById("question-container");
   var questionElement = document.getElementById("question");
   var choicesElement = document.getElementById("choices");
   var resultContainer = document.getElementById("result-container");
@@ -52,7 +51,7 @@
   function showQuestion() {
     var question = questions[currentQuestionIndex];
     questionElement.textContent = question.question;
-    questionElement.innerHTML = "";
+    choicesElement.innerHTML = "";
 
     for (var i = 0; i < question.choices.length; i++) {
         var choice = document.createElement("button");
