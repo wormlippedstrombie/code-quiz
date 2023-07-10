@@ -1,34 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-    <title>JavaScript Quiz</title>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="./assets/css/styles.css">
-    </head>
 
-    <body>
-        <h1>JavaScript Quiz</h1>
-        <div id="quiz-container">
-            <div id="question-container">
-            <h2 id="question"></h2>
-            <div id="choices"></div>
-            </div>
-            <div id="result-container" style="display: none;">
-            <p id="result"></p>
-            </div>
-            <div id="score-container" style="display: none;">
-            <h2>Your Score: <span id="score"></span></h2>
-            <form id="initials-form">
-                <label for="initials">Enter your initials:</label>
-                <input type="text" id="initials" required maxlength="3" />
-                <button type="submit">Submit</button>
-            </form>
-            </div>
-        </div>
-        <script src="./assets/javascript/script.js"></script>
-    </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coding Quiz</title>
+  <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>Coding Quiz</h1>
+    <div class="timer">
+      Time Left: <span id="timer">60</span> seconds
+    </div>
+    <div id="quiz-container">
+      <h2 id="question"></h2>
+      <div id="choices"></div>
+    </div>
+    <div id="result-container">
+      <h2 id="result"></h2>
+    </div>
+    <div id="score-container">
+      <h2 id="score"></h2>
+    </div>
+    <div id="initials-form-container" style="display: none;">
+      <form id="initials-form">
+        <label for="initials">Enter Initials:</label>
+        <input type="text" id="initials-input" required>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+    <div id="play-again-container" style="display: none;">
+      <button id="play-again-button">Play Again</button>
+    </div>
+    <div id="high-scores-container" style="display: none;">
+      <h2>High Scores</h2>
+      <table id="high-scores-table">
+        <thead>
+          <tr>
+            <th>Initials</th>
+            <th>Score</th>
+          </tr>
+        </thead>
+        <tbody id="high-scores-table-body">
+          <!-- High scores rows will be dynamically generated here -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <script src="./assets/javascript/script.js"></script>
+</body>
+
 </html>
-
   

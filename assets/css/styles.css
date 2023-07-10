@@ -1,82 +1,125 @@
 body {
+    background-color: #f0f2f5;
     font-family: Arial, sans-serif;
-    margin: 0;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
     padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   }
   
   h1 {
-    text-align: center;
+    color: #4267B2;
   }
   
-  /* Quiz Container */
-  #quiz-container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f5f5f5;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  /* Question Container */
-  #question-container {
-    margin-bottom: 20px;
-  }
-  
-  /* Choices */
-  #choices {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-  }
-  
-  button {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    background-color: #4caf50;
-    color: #fff;
+  .button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-right: 10px;
+    background-color: #4CAF50;
+    color: #ffffff;
     border: none;
-    border-radius: 5px;
+    border-radius: 4px;
     cursor: pointer;
   }
   
-  button:hover {
+  .button:hover {
     background-color: #45a049;
   }
   
-  /* Result Container */
-  #result-container {
-    text-align: center;
-    margin-bottom: 20px;
+  .button-primary {
+    background-color: #4267B2;
   }
   
-  /* Score Container */
-  #score-container {
-    text-align: center;
+  .button-primary:hover {
+    background-color: #3b5998;
   }
   
-  /* Initials Form */
-  #initials-form {
+  .quiz-container {
+    display: none;
     margin-top: 20px;
   }
   
-  label {
-    display: block;
+  .question {
     margin-bottom: 10px;
   }
   
-  input[type="text"] {
+  .choices {
+    margin-bottom: 20px;
+  }
+  
+  .choice-button {
+    display: block;
     width: 100%;
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #4CAF50;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
   }
   
-  button[type="submit"] {
-    background-color: #008cba;
+  .choice-button:hover {
+    background-color: #45a049;
   }
   
-  button[type="submit"]:hover {
-    background-color: #007098;
+  .result-container {
+    display: none;
+    margin-top: 20px;
+  }
+  
+  .score-container {
+    display: none;
+    margin-top: 20px;
+  }
+  
+  .initials-form {
+    display: none;
+    margin-top: 20px;
+  }
+  
+  .high-scores-table {
+    display: none;
+    margin-top: 20px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  table th,
+  table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #dddddd;
+  }
+  
+  .timer {
+    font-size: 24px;
+    font-weight: bold;
+    color: #4267B2;
+    margin-bottom: 20px;
+  }
+
+  #play-again-container {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  #play-again-button {
+    padding: 10px 20px;
+    background-color: #ffee01;
+    color: white;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+
+  #play-again-button:hover {
+    background-color: #45a049;
   }
